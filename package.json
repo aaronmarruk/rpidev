@@ -1,0 +1,67 @@
+{
+  "name": "user-crud-api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "babel-node": "babel-node --presets=env --inspect",
+    "dev": "nodemon --exec npm run babel-node -- ./bin/www",
+    "start": "node ./bin/www",
+    "test": "NODE_ENV=test API_KEY=supersecret ./node_modules/.bin/mocha test --recursive --require babel-core/register"
+  },
+  "engines": {
+    "node": "11.0.0"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "airbnb-base",
+    "env": {
+      "es6": true,
+      "browser": true
+    },
+    "rules": {
+      "brace-style": [
+        "error",
+        "stroustrup"
+      ],
+      "comma-dangle": [
+        "error",
+        "never"
+      ],
+      "no-unused-vars": [
+        "warn"
+      ],
+      "no-var": [
+        "off"
+      ],
+      "one-var": [
+        "off"
+      ]
+    }
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "morgan": "~1.9.0",
+    "sequelize": "^4.41.0",
+    "sequelize-cli": "^5.2.0",
+    "sqlite3": "^4.0.3"
+  },
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "babel-cli": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.5",
+    "supertest": "^3.3.0"
+  }
+}
