@@ -1,6 +1,6 @@
 # Raspberry Pi Developer Task
 
-This is the codebase for my REST API for the Raspberry Pi Developer Task. I built the API on Node.js using Express. I decided on Express as it still ranks higher in certain aspects which I look for when choosing frameworks, such as Github ranking and overall health of the project (i.e. size of community, and recent updates).
+This is the codebase for my REST API for the Raspberry Pi Developer Task.
 
 ## Running the application
 
