@@ -122,24 +122,20 @@ router.delete('/', (req, res, next) => {
 router.delete('/:id', requireAPIKey, (req, res, next) => {
   const { id } = req.params;
 
-  try {
-    models.User
-      .destroy({ where: { id } })
-      .then((updateVector) => {
-        const hasDeleted = !!updateVector;
+  models.User
+    .destroy({ where: { id } })
+    .then((updateVector) => {
+      const hasDeleted = !!updateVector;
 
-        if (hasDeleted) {
-          res.sendStatus(200);
-        } else {
-          const err = new AppError(USER_NOT_FOUND_ERROR, 404, 'User not found for :id', true);
+      if (hasDeleted) {
+        res.sendStatus(200);
+      } else {
+        const err = new AppError(USER_NOT_FOUND_ERROR, 404, 'User not found for :id', true);
 
-          next(err);
-        }
-      })
-      .catch(error => next(error));
-  } catch (error) {
-    next(error);
-  }
+        next(err);
+      }
+    })
+    .catch(error => next(error));
 });
 
 module.exports = router;

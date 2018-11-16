@@ -68,7 +68,7 @@ describe('User API', () => {
         .then(() => {
           request
             .get('/users')
-            .expect(/Terry/)
+            .expect(/terry@test.com/)
             .end(done);
         });
     });
